@@ -7837,7 +7837,7 @@ _.c=c
 _.d=d},
 a7I(a,b){var s=0,r=A.Q(t.Ct),q,p,o,n,m
 var $async$a7I=A.R(function(c,d){if(c===1)return A.N(d,r)
-for(;;)switch(s){case 0:p=A.cq("http://localhost:8000/login",0,null)
+for(;;)switch(s){case 0:p=A.cq("http://34.42.254.104:8000/login",0,null)
 o=t.N
 n=A.a2(["Content-Type","application/json"],o,o)
 s=3
@@ -7851,7 +7851,7 @@ case 1:return A.O(q,r)}})
 return A.P($async$a7I,r)},
 a7J(a,b,c){var s=0,r=A.Q(t.Ct),q,p,o,n,m
 var $async$a7J=A.R(function(d,e){if(d===1)return A.N(e,r)
-for(;;)switch(s){case 0:p=A.cq("http://localhost:8000/register",0,null)
+for(;;)switch(s){case 0:p=A.cq("http://34.42.254.104:8000/register",0,null)
 o=t.N
 n=A.a2(["Content-Type","application/json"],o,o)
 s=3
@@ -7866,7 +7866,7 @@ return A.P($async$a7J,r)},
 O0(){var s=0,r=A.Q(t.Jb),q,p,o
 var $async$O0=A.R(function(a,b){if(a===1)return A.N(b,r)
 for(;;)switch(s){case 0:s=3
-return A.S(A.AH(A.cq("http://localhost:8000/problems",0,null)),$async$O0)
+return A.S(A.AH(A.cq("http://34.42.254.104:8000/problems",0,null)),$async$O0)
 case 3:o=b
 if(o.b===200){p=J.dV(t.j.a(B.a4.fS(0,A.hJ(A.hH(o.e)).d0(0,o.w),null)),new A.a7D(),t.pB)
 p=A.U(p,p.$ti.h("ag.E"))
@@ -7878,7 +7878,7 @@ return A.P($async$O0,r)},
 O_(a){var s=0,r=A.Q(t.pB),q,p
 var $async$O_=A.R(function(b,c){if(b===1)return A.N(c,r)
 for(;;)switch(s){case 0:s=3
-return A.S(A.AH(A.cq("http://localhost:8000/problems/"+a,0,null)),$async$O_)
+return A.S(A.AH(A.cq("http://34.42.254.104:8000/problems/"+a,0,null)),$async$O_)
 case 3:p=c
 if(p.b===200){q=A.aLf(B.a4.fS(0,A.hJ(A.hH(p.e)).d0(0,p.w),null))
 s=1
@@ -7888,7 +7888,7 @@ return A.P($async$O_,r)},
 a7z(a){var s=0,r=A.Q(t.sB),q,p,o
 var $async$a7z=A.R(function(b,c){if(b===1)return A.N(c,r)
 for(;;)switch(s){case 0:s=3
-return A.S(A.AH(A.cq("http://localhost:8000/contests/joined/"+a,0,null)),$async$a7z)
+return A.S(A.AH(A.cq("http://34.42.254.104:8000/contests/joined/"+a,0,null)),$async$a7z)
 case 3:o=c
 if(o.b===200){p=J.dV(t.j.a(B.a4.fS(0,A.hJ(A.hH(o.e)).d0(0,o.w),null)),new A.a7A(),t._7)
 p=A.U(p,p.$ti.h("ag.E"))
@@ -7900,7 +7900,7 @@ return A.P($async$a7z,r)},
 a7y(a){var s=0,r=A.Q(t._7),q,p
 var $async$a7y=A.R(function(b,c){if(b===1)return A.N(c,r)
 for(;;)switch(s){case 0:s=3
-return A.S(A.AH(A.cq("http://localhost:8000/contests/"+a,0,null)),$async$a7y)
+return A.S(A.AH(A.cq("http://34.42.254.104:8000/contests/"+a,0,null)),$async$a7y)
 case 3:p=c
 if(p.b===200){q=A.aOM(B.a4.fS(0,A.hJ(A.hH(p.e)).d0(0,p.w),null))
 s=1
@@ -7909,7 +7909,7 @@ case 1:return A.O(q,r)}})
 return A.P($async$a7y,r)},
 a7u(a,b,c,d,e){var s=0,r=A.Q(t.P),q,p,o,n,m
 var $async$a7u=A.R(function(f,g){if(f===1)return A.N(g,r)
-for(;;)switch(s){case 0:p=A.cq("http://localhost:8000/contests",0,null)
+for(;;)switch(s){case 0:p=A.cq("http://34.42.254.104:8000/contests",0,null)
 o=t.N
 n=A.a2(["Content-Type","application/json"],o,o)
 s=3
@@ -7923,7 +7923,7 @@ case 1:return A.O(q,r)}})
 return A.P($async$a7u,r)},
 a7H(a,b){var s=0,r=A.Q(t.P),q,p,o,n,m
 var $async$a7H=A.R(function(c,d){if(c===1)return A.N(d,r)
-for(;;)switch(s){case 0:p=A.cq("http://localhost:8000/contests/join",0,null)
+for(;;)switch(s){case 0:p=A.cq("http://34.42.254.104:8000/contests/join",0,null)
 o=t.N
 n=A.a2(["Content-Type","application/json"],o,o)
 s=3
@@ -7937,7 +7937,7 @@ case 1:return A.O(q,r)}})
 return A.P($async$a7H,r)},
 a7K(a,b,c,d,e){var s=0,r=A.Q(t.PS),q,p,o,n,m
 var $async$a7K=A.R(function(f,g){if(f===1)return A.N(g,r)
-for(;;)switch(s){case 0:p=A.cq("http://localhost:8000/run",0,null)
+for(;;)switch(s){case 0:p=A.cq("http://34.42.254.104:8000/run",0,null)
 o=t.N
 n=A.a2(["Content-Type","application/json"],o,o)
 s=3
@@ -7953,7 +7953,7 @@ case 1:return A.O(q,r)}})
 return A.P($async$a7K,r)},
 a7M(a,b,c,d,e){var s=0,r=A.Q(t.P),q,p,o,n,m
 var $async$a7M=A.R(function(f,g){if(f===1)return A.N(g,r)
-for(;;)switch(s){case 0:p=A.cq("http://localhost:8000/submit_code",0,null)
+for(;;)switch(s){case 0:p=A.cq("http://34.42.254.104:8000/submit_code",0,null)
 o=t.N
 n=A.a2(["Content-Type","application/json"],o,o)
 s=3
@@ -7968,7 +7968,7 @@ return A.P($async$a7M,r)},
 a7B(a){var s=0,r=A.Q(t.wE),q,p,o
 var $async$a7B=A.R(function(b,c){if(b===1)return A.N(c,r)
 for(;;)switch(s){case 0:s=3
-return A.S(A.AH(A.cq("http://localhost:8000/leaderboard/"+a,0,null)),$async$a7B)
+return A.S(A.AH(A.cq("http://34.42.254.104:8000/leaderboard/"+a,0,null)),$async$a7B)
 case 3:o=c
 if(o.b===200){p=J.dV(t.j.a(B.a4.fS(0,A.hJ(A.hH(o.e)).d0(0,o.w),null)),new A.a7C(),t.Mh)
 p=A.U(p,p.$ti.h("ag.E"))
@@ -7979,7 +7979,7 @@ case 1:return A.O(q,r)}})
 return A.P($async$a7B,r)},
 a7v(a,b,c,d,e,f,g){var s=0,r=A.Q(t.S),q,p,o,n,m
 var $async$a7v=A.R(function(h,i){if(h===1)return A.N(i,r)
-for(;;)switch(s){case 0:p=A.cq("http://localhost:8000/problems",0,null)
+for(;;)switch(s){case 0:p=A.cq("http://34.42.254.104:8000/problems",0,null)
 o=t.N
 n=A.a2(["Content-Type","application/json"],o,o)
 s=3
@@ -8001,7 +8001,7 @@ n.n(0,"description",a)
 n.n(0,"tags",f)
 n.n(0,"harness_template",c)
 n.n(0,"starter_code",e)
-q=A.cq("http://localhost:8000/problems/"+d,0,null)
+q=A.cq("http://34.42.254.104:8000/problems/"+d,0,null)
 o=A.a2(["Content-Type","application/json"],o,o)
 s=2
 return A.S(A.aVs(q,B.a4.jD(n,null),o),$async$a7N)
@@ -8012,7 +8012,7 @@ return A.P($async$a7N,r)},
 a7w(a,b){var s=0,r=A.Q(t.H),q,p
 var $async$a7w=A.R(function(c,d){if(c===1)return A.N(d,r)
 for(;;)switch(s){case 0:s=2
-return A.S(A.aN8(A.cq("http://localhost:8000/problems/"+a+"?user_id="+b,0,null)),$async$a7w)
+return A.S(A.aN8(A.cq("http://34.42.254.104:8000/problems/"+a+"?user_id="+b,0,null)),$async$a7w)
 case 2:p=d
 if(p.b!==200){q=J.aP(A.k3(p.ghE(0)),"detail")
 throw A.f(A.bW(q==null?"Failed to delete problem":q))}return A.O(null,r)}})
@@ -8020,7 +8020,7 @@ return A.P($async$a7w,r)},
 O1(a){var s=0,r=A.Q(t.LL),q,p,o
 var $async$O1=A.R(function(b,c){if(b===1)return A.N(c,r)
 for(;;)switch(s){case 0:s=3
-return A.S(A.AH(A.cq("http://localhost:8000/problems/"+a+"/testcases",0,null)),$async$O1)
+return A.S(A.AH(A.cq("http://34.42.254.104:8000/problems/"+a+"/testcases",0,null)),$async$O1)
 case 3:o=c
 if(o.b===200){p=J.dV(t.j.a(B.a4.fS(0,A.hJ(A.hH(o.e)).d0(0,o.w),null)),new A.a7E(),t.nr)
 p=A.U(p,p.$ti.h("ag.E"))
@@ -8031,7 +8031,7 @@ case 1:return A.O(q,r)}})
 return A.P($async$O1,r)},
 a7s(a,b,c){var s=0,r=A.Q(t.S),q,p,o,n,m
 var $async$a7s=A.R(function(d,e){if(d===1)return A.N(e,r)
-for(;;)switch(s){case 0:p=A.cq("http://localhost:8000/problems/"+c+"/testcases",0,null)
+for(;;)switch(s){case 0:p=A.cq("http://34.42.254.104:8000/problems/"+c+"/testcases",0,null)
 o=t.N
 n=A.a2(["Content-Type","application/json"],o,o)
 s=3
@@ -8045,7 +8045,7 @@ case 1:return A.O(q,r)}})
 return A.P($async$a7s,r)},
 a7t(a,b){var s=0,r=A.Q(t.H),q,p,o,n
 var $async$a7t=A.R(function(c,d){if(c===1)return A.N(d,r)
-for(;;)switch(s){case 0:q=A.cq("http://localhost:8000/problems/"+a+"/testcases/bulk",0,null)
+for(;;)switch(s){case 0:q=A.cq("http://34.42.254.104:8000/problems/"+a+"/testcases/bulk",0,null)
 p=t.N
 o=A.a2(["Content-Type","application/json"],p,p)
 s=2
@@ -8060,7 +8060,7 @@ for(;;)switch(s){case 0:o=t.N
 n=A.r(o,t.z)
 n.n(0,"input",b)
 n.n(0,"expected_output",a)
-q=A.cq("http://localhost:8000/testcases/"+c,0,null)
+q=A.cq("http://34.42.254.104:8000/testcases/"+c,0,null)
 o=A.a2(["Content-Type","application/json"],o,o)
 s=2
 return A.S(A.aVs(q,B.a4.jD(n,null),o),$async$a7O)
@@ -8071,7 +8071,7 @@ return A.P($async$a7O,r)},
 a7x(a){var s=0,r=A.Q(t.H),q,p
 var $async$a7x=A.R(function(b,c){if(b===1)return A.N(c,r)
 for(;;)switch(s){case 0:s=2
-return A.S(A.aN8(A.cq("http://localhost:8000/testcases/"+a,0,null)),$async$a7x)
+return A.S(A.aN8(A.cq("http://34.42.254.104:8000/testcases/"+a,0,null)),$async$a7x)
 case 2:p=c
 if(p.b!==200){q=J.aP(A.k3(p.ghE(0)),"detail")
 throw A.f(A.bW(q==null?"Failed to delete test case":q))}return A.O(null,r)}})
@@ -8079,7 +8079,7 @@ return A.P($async$a7x,r)},
 a7F(a){var s=0,r=A.Q(t.GJ),q,p,o
 var $async$a7F=A.R(function(b,c){if(b===1)return A.N(c,r)
 for(;;)switch(s){case 0:s=3
-return A.S(A.AH(A.cq("http://localhost:8000/submissions/"+a,0,null)),$async$a7F)
+return A.S(A.AH(A.cq("http://34.42.254.104:8000/submissions/"+a,0,null)),$async$a7F)
 case 3:o=c
 if(o.b===200){p=J.dV(t.j.a(B.a4.fS(0,A.hJ(A.hH(o.e)).d0(0,o.w),null)),new A.a7G(),t.D0)
 p=A.U(p,p.$ti.h("ag.E"))
@@ -48983,7 +48983,7 @@ $0(){return A.dY(this.a).dN(0,"/login",null)},
 $S:0}
 A.a3d.prototype={
 E(a){var s=null
-return A.b8(A.a([new A.Ae("3","Languages",s),A.bi(s,s,B.o,B.ad,s,s,s,28,s,B.q3,s,s,s,1),new A.Ae("Easy\u2192Hard","Difficulty tiers",s),A.bi(s,s,B.o,B.ad,s,s,s,28,s,B.q3,s,s,s,1),new A.Ae("Real-time","Judging",s)],t.p),B.p,B.bC,B.l,0,s)}}
+return A.b8(A.a([new A.Ae("1","Language",s),A.bi(s,s,B.o,B.ad,s,s,s,28,s,B.q3,s,s,s,1),new A.Ae("Easy\u2192Hard","Difficulty tiers",s),A.bi(s,s,B.o,B.ad,s,s,s,28,s,B.q3,s,s,s,1),new A.Ae("Real-time","Judging",s)],t.p),B.p,B.bC,B.l,0,s)}}
 A.Ae.prototype={
 E(a){var s=null
 return A.bh(A.a([A.V(this.c,s,s,s,s,A.b_().$3$color$fontSize$fontWeight(B.m,18,B.aw),s,s,s),A.V(this.d,s,s,s,s,A.bN().$2$color$fontSize(B.q,12),s,s,s)],t.p),B.p,B.k,B.l,0,B.t)}}
