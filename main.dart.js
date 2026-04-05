@@ -48983,7 +48983,7 @@ $0(){return A.dY(this.a).dN(0,"/login",null)},
 $S:0}
 A.a3d.prototype={
 E(a){var s=null
-return A.b8(A.a([new A.Ae("1","Language",s),A.bi(s,s,B.o,B.ad,s,s,s,28,s,B.q3,s,s,s,1),new A.Ae("Easy\u2192Hard","Difficulty tiers",s),A.bi(s,s,B.o,B.ad,s,s,s,28,s,B.q3,s,s,s,1),new A.Ae("Real-time","Judging",s)],t.p),B.p,B.bC,B.l,0,s)}}
+return A.b8(A.a([new A.Ae("3","Languages",s),A.bi(s,s,B.o,B.ad,s,s,s,28,s,B.q3,s,s,s,1),new A.Ae("Easy\u2192Hard","Difficulty tiers",s),A.bi(s,s,B.o,B.ad,s,s,s,28,s,B.q3,s,s,s,1),new A.Ae("Real-time","Judging",s)],t.p),B.p,B.bC,B.l,0,s)}}
 A.Ae.prototype={
 E(a){var s=null
 return A.bh(A.a([A.V(this.c,s,s,s,s,A.b_().$3$color$fontSize$fontWeight(B.m,18,B.aw),s,s,s),A.V(this.d,s,s,s,s,A.bN().$2$color$fontSize(B.q,12),s,s,s)],t.p),B.p,B.k,B.l,0,B.t)}}
