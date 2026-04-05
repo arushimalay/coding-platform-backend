@@ -11,14 +11,13 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Problems (
-    problem_id         INT PRIMARY KEY AUTO_INCREMENT,
-    title              VARCHAR(255) NOT NULL,
-    difficulty         VARCHAR(10) CHECK (difficulty IN ('Easy','Medium','Hard')),
-    points             INT,
-    description        TEXT,
-    -- LeetCode-style function metadata stored as JSON string
-    -- e.g. {"name":"twoSum","params":[{"name":"nums","type":"List[int]"},{"name":"target","type":"int"}],"return_type":"List[int]"}
-    function_signature TEXT
+    problem_id       INT PRIMARY KEY AUTO_INCREMENT,
+    title            VARCHAR(255) NOT NULL,
+    difficulty       VARCHAR(10) CHECK (difficulty IN ('Easy','Medium','Hard')),
+    points           INT,
+    description      TEXT,
+    harness_template TEXT,
+    starter_code     TEXT
 );
 
 CREATE TABLE Tags (
@@ -37,8 +36,6 @@ CREATE TABLE ProblemTags (
 CREATE TABLE TestCases (
     testcase_id     INT PRIMARY KEY AUTO_INCREMENT,
     problem_id      INT,
-    -- For function-style problems: input stores JSON arg list, e.g. '[[2,7,11,15], 9]'
-    -- expected_output stores the return value as string, e.g. '[0, 1]'
     input           TEXT,
     expected_output TEXT,
     FOREIGN KEY (problem_id) REFERENCES Problems(problem_id) ON DELETE CASCADE
@@ -49,7 +46,6 @@ CREATE TABLE Contests (
     title      VARCHAR(100),
     start_time DATETIME,
     end_time   DATETIME,
-    -- Random human-readable join code like "swift-tiger-42"
     join_code  VARCHAR(50) UNIQUE
 );
 
@@ -61,7 +57,6 @@ CREATE TABLE ContestProblems (
     FOREIGN KEY (problem_id) REFERENCES Problems(problem_id) ON DELETE CASCADE
 );
 
--- Tracks which users have joined which contests (persisted across sessions)
 CREATE TABLE ContestMembers (
     contest_id INT,
     user_id    INT,
@@ -130,58 +125,217 @@ INSERT INTO Users (username, email, password) VALUES
 ('Arushi', 'aru@gmail.com',   '123'),
 ('Rahul',  'rahul@gmail.com', '123');
 
--- Problems now include function_signature JSON
-INSERT INTO Problems (title, difficulty, description, function_signature) VALUES
+-- ── Two Sum ───────────────────────────────────────────────────────────────────
+INSERT INTO Problems (title, difficulty, description, harness_template, starter_code) VALUES
 ('Two Sum', 'Easy',
- 'Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nReturn the answer in any order.',
- '{"name":"twoSum","params":[{"name":"nums","type":"List[int]"},{"name":"target","type":"int"}],"return_type":"List[int]"}'
-),
-('Binary Search', 'Medium',
- 'Given a sorted array of distinct integers and a target value, return the index of the target using binary search. Return -1 if not found.',
- '{"name":"search","params":[{"name":"nums","type":"List[int]"},{"name":"target","type":"int"}],"return_type":"int"}'
-),
-('Graph Paths', 'Hard',
- 'Given an undirected graph with V vertices (0-indexed) and E edges represented as an adjacency list, find the shortest path length from vertex 0 to vertex V-1 using BFS. Return -1 if no path exists.\n\nThe graph is passed as a list of edges, e.g. [[0,1],[1,2]].',
- '{"name":"shortestPath","params":[{"name":"V","type":"int"},{"name":"edges","type":"List[List[int]]"}],"return_type":"int"}'
+'Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Return the answer in any order.',
+'import json
+
+{{USER_CODE}}
+
+def _run_test():
+    args = json.loads(\'{{INPUT}}\')
+    expected = json.loads(\'{{EXPECTED}}\')
+    nums, target = args[0], args[1]
+    result = Solution().twoSum(nums, target)
+    if sorted(result) == sorted(expected):
+        print("PASS")
+    else:
+        print("FAIL")
+        print("Expected:", expected)
+        print("Got:     ", result)
+
+_run_test()',
+'from typing import List
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # Write your solution here
+        pass'
 );
 
+-- ── Binary Search ─────────────────────────────────────────────────────────────
+INSERT INTO Problems (title, difficulty, description, harness_template, starter_code) VALUES
+('Binary Search', 'Medium',
+'Given a sorted array of distinct integers and a target value, return the index of the target using binary search. Return -1 if not found.',
+'import json
+
+{{USER_CODE}}
+
+def _run_test():
+    args = json.loads(\'{{INPUT}}\')
+    expected = json.loads(\'{{EXPECTED}}\')
+    nums, target = args[0], args[1]
+    result = Solution().search(nums, target)
+    if str(result) == str(expected):
+        print("PASS")
+    else:
+        print("FAIL")
+        print("Expected:", expected)
+        print("Got:     ", result)
+
+_run_test()',
+'from typing import List
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        # Write your solution here
+        pass'
+);
+
+-- ── Graph Paths ───────────────────────────────────────────────────────────────
+INSERT INTO Problems (title, difficulty, description, harness_template, starter_code) VALUES
+('Graph Paths', 'Hard',
+'Given an undirected graph with V vertices (0-indexed) and E edges represented as a list of edges, find the shortest path length from vertex 0 to vertex V-1 using BFS. Return -1 if no path exists.
+
+The input is passed as [V, edges], e.g. [4, [[0,1],[1,2],[2,3]]].',
+'import json
+from collections import deque
+
+{{USER_CODE}}
+
+def _run_test():
+    args = json.loads(\'{{INPUT}}\')
+    expected = json.loads(\'{{EXPECTED}}\')
+    V, edges = args[0], args[1]
+    result = Solution().shortestPath(V, edges)
+    if str(result) == str(expected):
+        print("PASS")
+    else:
+        print("FAIL")
+        print("Expected:", expected)
+        print("Got:     ", result)
+
+_run_test()',
+'from typing import List
+from collections import deque
+
+class Solution:
+    def shortestPath(self, V: int, edges: List[List[int]]) -> int:
+        # Write your solution here
+        pass'
+);
+
+-- ── Reverse String ────────────────────────────────────────────────────────────
+INSERT INTO Problems (title, difficulty, description, harness_template, starter_code) VALUES
+('Reverse String', 'Easy',
+'Given a string s, return the string reversed.
+
+Example: "hello" -> "olleh"',
+'import json
+
+{{USER_CODE}}
+
+def _run_test():
+    s = json.loads(\'{{INPUT}}\')
+    expected = json.loads(\'{{EXPECTED}}\')
+    result = Solution().reverseString(s)
+    if str(result) == str(expected):
+        print("PASS")
+    else:
+        print("FAIL")
+        print("Expected:", expected)
+        print("Got:     ", result)
+
+_run_test()',
+'class Solution:
+    def reverseString(self, s: str) -> str:
+        # Write your solution here
+        pass'
+);
+
+-- ── FizzBuzz ──────────────────────────────────────────────────────────────────
+INSERT INTO Problems (title, difficulty, description, harness_template, starter_code) VALUES
+('FizzBuzz', 'Easy',
+'Given an integer n, return a list of strings for numbers 1 to n where:
+- "FizzBuzz" if divisible by both 3 and 5
+- "Fizz" if divisible by 3
+- "Buzz" if divisible by 5
+- The number as a string otherwise.',
+'import json
+
+{{USER_CODE}}
+
+def _run_test():
+    n = json.loads(\'{{INPUT}}\')
+    expected = json.loads(\'{{EXPECTED}}\')
+    result = Solution().fizzBuzz(n)
+    if result == expected:
+        print("PASS")
+    else:
+        print("FAIL")
+        print("Expected:", expected)
+        print("Got:     ", result)
+
+_run_test()',
+'from typing import List
+
+class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        # Write your solution here
+        pass'
+);
+
+-- ─── Tags ─────────────────────────────────────────────────────────────────────
 INSERT INTO Tags (tag_name) VALUES
-('array'), ('hashmap'), ('binary-search'), ('graph'), ('bfs'), ('two-pointers');
+('array'), ('hashmap'), ('binary-search'), ('graph'), ('bfs'), ('two-pointers'),
+('string'), ('math');
 
+-- Two Sum: array, hashmap
 INSERT INTO ProblemTags VALUES (1, 1), (1, 2);
-INSERT INTO ProblemTags VALUES (2, 3);
+-- Binary Search: binary-search, array
+INSERT INTO ProblemTags VALUES (2, 3), (2, 1);
+-- Graph Paths: graph, bfs
 INSERT INTO ProblemTags VALUES (3, 4), (3, 5);
+-- Reverse String: string
+INSERT INTO ProblemTags VALUES (4, 7);
+-- FizzBuzz: math
+INSERT INTO ProblemTags VALUES (5, 8);
 
--- Test cases now use JSON-encoded arguments as input
--- Two Sum: input = JSON list of args [nums, target], output = JSON list [i, j]
+-- ─── Test Cases ───────────────────────────────────────────────────────────────
+
+-- Two Sum
 INSERT INTO TestCases (problem_id, input, expected_output) VALUES
 (1, '[[2, 7, 11, 15], 9]',  '[0, 1]'),
 (1, '[[3, 2, 4], 6]',       '[1, 2]'),
 (1, '[[3, 3], 6]',          '[0, 1]');
 
--- Binary Search: input = [nums, target], output = index
+-- Binary Search
 INSERT INTO TestCases (problem_id, input, expected_output) VALUES
 (2, '[[1, 3, 5, 7, 9], 7]', '3'),
 (2, '[[1, 3, 5, 7, 9], 1]', '0'),
 (2, '[[1, 3, 5, 7, 9], 6]', '-1');
 
--- Graph Paths: input = [V, edges], output = shortest path length
+-- Graph Paths
 INSERT INTO TestCases (problem_id, input, expected_output) VALUES
 (3, '[4, [[0,1],[1,2],[2,3],[0,3]]]', '2'),
 (3, '[2, [[0,1]]]',                   '1'),
 (3, '[3, [[0,1]]]',                   '-1');
 
--- Contest with a human-readable join code
+-- Reverse String
+INSERT INTO TestCases (problem_id, input, expected_output) VALUES
+(4, '"hello"',   '"olleh"'),
+(4, '"abcdef"',  '"fedcba"'),
+(4, '"racecar"', '"racecar"');
+
+-- FizzBuzz
+INSERT INTO TestCases (problem_id, input, expected_output) VALUES
+(5, '5',  '["1", "2", "Fizz", "4", "Buzz"]'),
+(5, '15', '["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]'),
+(5, '3',  '["1", "2", "Fizz"]');
+
+-- ─── Contest ──────────────────────────────────────────────────────────────────
 INSERT INTO Contests (title, start_time, end_time, join_code) VALUES
 ('Weekly Contest', NOW(), DATE_ADD(NOW(), INTERVAL 2 HOUR), 'swift-tiger-42');
 
 INSERT INTO ContestProblems VALUES (1,1), (1,2), (1,3);
 
--- Both seed users join the contest
 INSERT INTO ContestMembers (contest_id, user_id) VALUES (1, 1), (1, 2);
 
--- Sample accepted submissions
-INSERT INTO Submissions (user_id, problem_id, contest_id, status, execution_time) VALUES
-(1, 1, 1, 'Accepted', 0.5),
-(1, 2, 1, 'Accepted', 0.7),
-(2, 1, 1, 'Accepted', 0.4);
+ALTER TABLE Problems
+  ADD COLUMN created_by INT NULL,
+  ADD FOREIGN KEY (created_by) REFERENCES Users(user_id) ON DELETE SET NULL;
