@@ -1,0 +1,42 @@
+name: coding_platform
+description: A competitive coding platform — LeetCode style.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+
+  # HTTP
+  http: ^1.2.1
+
+  # Code editor with syntax highlighting
+  flutter_code_editor: ^0.3.1
+  highlight: ^0.7.0
+  flutter_highlight: ^0.7.0
+
+  # State / routing
+  provider: ^6.1.2
+  go_router: ^13.2.1
+
+  # UI helpers
+  google_fonts: ^6.2.1
+  lucide_icons_flutter: ^3.1.11
+  intl: ^0.19.0
+  shimmer: ^3.0.0
+  animated_text_kit: ^4.2.3
+  flutter_animate: ^4.5.0
+  percent_indicator: ^4.2.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
