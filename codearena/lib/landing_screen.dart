@@ -155,7 +155,7 @@ class _StatsRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _Stat('3', 'Languages'),
+        _Stat('1', 'Language'),
         _divider(),
         _Stat('Easy→Hard', 'Difficulty tiers'),
         _divider(),
